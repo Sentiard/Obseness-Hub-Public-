@@ -1,5 +1,6 @@
 -- Settings
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local OHVersion = "V1.2"
 
 local Window = Rayfield:CreateWindow({
    Name = "Obseness Hub",
@@ -98,6 +99,5 @@ local Button = Tab2:CreateButton({
 local Label = Tab3:CreateLabel("Made By. Obseness", 4483362458, Color3.fromRGB(150, 150, 150), false) -- Title, Icon, Color, IgnoreTheme
 
 -- Version
-local OHVersion = "V1.0"
-
 local Paragraph = Tab4:CreateParagraph({Title = "Date. 2025-09-27", Content = OHVersion})
+
