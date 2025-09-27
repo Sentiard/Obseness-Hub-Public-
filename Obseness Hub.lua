@@ -1,6 +1,6 @@
 -- Settings
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
-local OHVersion = "V1.2"
+local OHVersion = "V1.3"
 
 local Window = Rayfield:CreateWindow({
    Name = "Obseness Hub",
@@ -8,7 +8,7 @@ local Window = Rayfield:CreateWindow({
    LoadingTitle = "Obseness Hub",
    LoadingSubtitle = "by Obseness",
    ShowText = "Rayfield", -- for mobile users to unhide rayfield, change if you'd like
-   Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+   Theme = ThemeConfig
 
    ToggleUIKeybind = "K", -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
 
@@ -39,6 +39,41 @@ Rayfield:Notify({
    Duration = 5,
    Image = 4483362458,
 })
+
+local ThemeConfig = {
+    TextColor = Color3.fromRGB(240, 240, 240),
+    Background = Color3.fromRGB(15, 20, 30),
+    Topbar = Color3.fromRGB(25, 30, 80),
+    Shadow = Color3.fromRGB(20, 20, 20),
+    NotificationBackground = Color3.fromRGB(20, 20, 20),
+    NotificationActionsBackground = Color3.fromRGB(230, 230, 230),
+    TabBackground = Color3.fromRGB(25, 25, 25),
+    TabStroke = Color3.fromRGB(35, 40, 50),
+    TabBackgroundSelected = Color3.fromRGB(25, 30, 30),
+    TabTextColor = Color3.fromRGB(240, 240, 240),
+    SelectedTabTextColor = Color3.fromRGB(240, 240, 240),
+    ElementBackground = Color3.fromRGB(25, 30, 30),
+    ElementBackgroundHover = Color3.fromRGB(25, 30, 45),
+    SecondaryElementBackground = Color3.fromRGB(25, 25, 25),
+    ElementStroke = Color3.fromRGB(35, 40, 50),
+    SecondaryElementStroke = Color3.fromRGB(40, 40, 40),
+    SliderBackground = Color3.fromRGB(35, 40, 60),
+    SliderProgress = Color3.fromRGB(45, 40, 50),
+    SliderStroke = Color3.fromRGB(45, 40, 60),
+    ToggleBackground = Color3.fromRGB(30, 30, 30),
+    ToggleEnabled = Color3.fromRGB(0, 146, 214),
+    ToggleDisabled = Color3.fromRGB(100, 100, 100),
+    ToggleEnabledStroke = Color3.fromRGB(0, 170, 255),
+    ToggleDisabledStroke = Color3.fromRGB(125, 125, 125),
+    ToggleEnabledOuterStroke = Color3.fromRGB(100, 100, 100),
+    ToggleDisabledOuterStroke = Color3.fromRGB(65, 65, 65),
+    DropdownSelected = Color3.fromRGB(40, 40, 40),
+    DropdownUnselected = Color3.fromRGB(30, 30, 30),
+    InputBackground = Color3.fromRGB(30, 30, 255),
+    InputStroke = Color3.fromRGB(65, 65, 65),
+    PlaceholderColor = Color3.fromRGB(178, 178, 178)
+}
+
 
 -- Tabs
 local Tab = Window:CreateTab("Main", 4483362458) -- Title, Image
@@ -100,4 +135,3 @@ local Label = Tab3:CreateLabel("Made By. Obseness", 4483362458, Color3.fromRGB(1
 
 -- Version
 local Paragraph = Tab4:CreateParagraph({Title = "Date. 2025-09-27", Content = OHVersion})
-
