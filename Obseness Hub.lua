@@ -35,6 +35,7 @@ local ThemeConfig = {
 
 -- Rayfield 로드
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local OHVersion = 2.0
 
 -- CreateWindow에서 ThemeConfig를 사용, 필드 사이에 콤마 추가
 local Window = Rayfield:CreateWindow({
@@ -42,7 +43,7 @@ local Window = Rayfield:CreateWindow({
    Icon = 0,
    LoadingTitle = "Obseness Hub",
    LoadingSubtitle = "by Obseness",
-   ShowText = "Rayfield",
+   ShowText = OHVersion,
    Theme = ThemeConfig,
    ToggleUIKeybind = "K",
    DisableRayfieldPrompts = false,
@@ -56,7 +57,7 @@ local Window = Rayfield:CreateWindow({
    KeySettings = {
       Title = "Key",
       Subtitle = "Key System",
-      Note = "Key is My Name.",
+      Note = OHVersion,
       FileName = "Key",
       SaveKey = true,
       GrabKeyFromSite = false,
@@ -66,7 +67,7 @@ local Window = Rayfield:CreateWindow({
 
 Rayfield:Notify({
    Title = "Loading Successfully!",
-   Content = "Made By. Obseness",
+   Content = OHVersion,
    Duration = 5,
    Image = 4483362458,
 })
@@ -93,13 +94,14 @@ end
 local Tab = Window:CreateTab("Main", 4483362458)
 local Tab2 = Window:CreateTab("Misc", 4483362458)
 local Tab3 = Window:CreateTab("Credit", 4483362458)
-local Tab4 = Window:CreateTab("Versions", 4483362458)
+local Tab4 = WIndow:CreateTab("Update Logs", 4483362458)
 
 -- Sections
 Tab:CreateSection("Main")
 Tab2:CreateSection("Misc")
 Tab3:CreateSection("Credit")
-Tab4:CreateSection("Version")
+Tab4:CreateSection("Update Logs")
+
 
 -- Buttons (Main)
 Tab:CreateButton({
@@ -125,7 +127,7 @@ Tab:CreateButton({
 local Button = Tab2:CreateButton({
    Name = "infinite yield",
    Callback = function()
-   safeLoad(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+   safeLoad("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
    end,
 })
 
@@ -134,5 +136,11 @@ local Button = Tab2:CreateButton({
 -- Credit
 Tab3:CreateLabel("Made By. Obseness", 4483362458, Color3.fromRGB(150,150,150), false)
 
--- Version
-Tab4:CreateParagraph({Title = "Date. 2025-09-27", Content = "V1.5"})
+-- Update Logs
+Tab4:CreateParagraph({
+        Title = "Date. 2025-09-27",
+        Content = OHVersion,
+        Content2 = "-Big Update-",
+        Content3 = "Fix Theme System"
+        Content4 = "Remove Version Tab and Add Update Logs"
+    })
