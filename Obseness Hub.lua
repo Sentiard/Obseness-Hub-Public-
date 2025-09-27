@@ -1,8 +1,8 @@
--- ThemeConfig 먼저 선언
+-- ThemeConfig
 local ThemeConfig = {
     TextColor = Color3.fromRGB(240, 240, 240),
     Background = Color3.fromRGB(15, 20, 30),
-    Topbar = Color3.fromRGB(25, 30, 80),
+    Topbar = Color3.fromRGB(25, 30, 50),
     Shadow = Color3.fromRGB(20, 20, 20),
     NotificationBackground = Color3.fromRGB(20, 20, 20),
     NotificationActionsBackground = Color3.fromRGB(230, 230, 230),
@@ -33,11 +33,11 @@ local ThemeConfig = {
     PlaceholderColor = Color3.fromRGB(178, 178, 178)
 }
 
--- Rayfield 로드
+-- Rayfield and Version Load
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
-local OHVersion = 2.0
+local OHVersion = "2.0"
 
--- CreateWindow에서 ThemeConfig를 사용, 필드 사이에 콤마 추가
+-- UI Create
 local Window = Rayfield:CreateWindow({
    Name = "Obseness Hub",
    Icon = 0,
@@ -72,7 +72,7 @@ Rayfield:Notify({
    Image = 4483362458,
 })
 
--- 안전한 원격 로드 헬퍼
+-- Safe Load Function
 local function safeLoad(url)
     local ok, res = pcall(function() return game:HttpGet(url) end)
     if not ok or not res or res == "" then
@@ -94,14 +94,13 @@ end
 local Tab = Window:CreateTab("Main", 4483362458)
 local Tab2 = Window:CreateTab("Misc", 4483362458)
 local Tab3 = Window:CreateTab("Credit", 4483362458)
-local Tab4 = WIndow:CreateTab("Update Logs", 4483362458)
+local Tab4 = Window:CreateTab("Update Logs", 4483362458)
 
 -- Sections
 Tab:CreateSection("Main")
 Tab2:CreateSection("Misc")
 Tab3:CreateSection("Credit")
 Tab4:CreateSection("Update Logs")
-
 
 -- Buttons (Main)
 Tab:CreateButton({
@@ -124,23 +123,19 @@ Tab:CreateButton({
 })
 
 -- Buttons (Misc)
-local Button = Tab2:CreateButton({
+Tab2:CreateButton({
    Name = "infinite yield",
    Callback = function()
-   safeLoad("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
+      safeLoad("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
    end,
 })
-
-
 
 -- Credit
 Tab3:CreateLabel("Made By. Obseness", 4483362458, Color3.fromRGB(150,150,150), false)
 
 -- Update Logs
 Tab4:CreateParagraph({
-        Title = "Date. 2025-09-27",
-        Content = OHVersion,
-        Content2 = "-Big Update-",
-        Content3 = "Fix Theme System"
-        Content4 = "Remove Version Tab and Add Update Logs"
-    })
+   Title = "Date. 2025-09-27",
+   Content = "Version: " .. OHVersion .. "\n\n- Big Update -\nFix Theme System\nRemove Version Tab and Add Update Logs"
+})
+
