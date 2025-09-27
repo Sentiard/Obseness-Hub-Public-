@@ -79,6 +79,12 @@ local Button = Tab:CreateButton({
    loadstring(game:HttpGet("https://zetrax.cc"))()
    end,
 })
+local Button = Tab:CreateButton({
+   Name = "LS Hub(My first script hub)",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Sentiard/lshub/refs/heads/main/Source"))()
+   end,
+})
 
 -- Buttons (Misc)
 local Button = Tab2:CreateButton({
@@ -93,4 +99,5 @@ local Label = Tab3:CreateLabel("Made By. Obseness", 4483362458, Color3.fromRGB(1
 
 -- Version
 local OHVersion = "V1.0"
+
 local Paragraph = Tab4:CreateParagraph({Title = "Date. 2025-09-27", Content = OHVersion})
